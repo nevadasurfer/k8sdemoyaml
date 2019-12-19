@@ -1,0 +1,136 @@
+{
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+        "creationTimestamp": "2019-12-18T23:48:48Z",
+        "generateName": "nginx-5c7588df-",
+        "labels": {
+            "app": "nginx",
+            "pod-template-hash": "5c7588df"
+        },
+        "name": "nginx-5c7588df-nncgd",
+        "namespace": "default",
+        "ownerReferences": [
+            {
+                "apiVersion": "apps/v1",
+                "blockOwnerDeletion": true,
+                "controller": true,
+                "kind": "ReplicaSet",
+                "name": "nginx-5c7588df",
+                "uid": "efb2cb78-21f0-11ea-8520-022d2b557230"
+            }
+        ],
+        "resourceVersion": "21189",
+        "selfLink": "/api/v1/namespaces/default/pods/nginx-5c7588df-nncgd",
+        "uid": "efb62682-21f0-11ea-8520-022d2b557230"
+    },
+    "spec": {
+        "containers": [
+            {
+                "image": "nginx",
+                "imagePullPolicy": "Always",
+                "name": "nginx",
+                "resources": {},
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                    {
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                        "name": "default-token-q2gtf",
+                        "readOnly": true
+                    }
+                ]
+            }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "worker-2",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            },
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            }
+        ],
+        "volumes": [
+            {
+                "name": "default-token-q2gtf",
+                "secret": {
+                    "defaultMode": 420,
+                    "secretName": "default-token-q2gtf"
+                }
+            }
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2019-12-18T23:48:42Z",
+                "status": "True",
+                "type": "Initialized"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2019-12-19T02:05:47Z",
+                "status": "True",
+                "type": "Ready"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2019-12-19T02:05:47Z",
+                "status": "True",
+                "type": "ContainersReady"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2019-12-18T23:48:48Z",
+                "status": "True",
+                "type": "PodScheduled"
+            }
+        ],
+        "containerStatuses": [
+            {
+                "containerID": "docker://42d3c8ee04f8a3fdd7c344dd48fdc12d87a1d69422fd2911151169092ab8cc8a",
+                "image": "nginx:latest",
+                "imageID": "docker-pullable://nginx@sha256:50cf965a6e08ec5784009d0fccb380fc479826b6e0e65684d9879170a9df8566",
+                "lastState": {
+                    "terminated": {
+                        "containerID": "docker://7e3086182b3b8a7fb0011da3aaa85e55c8b5e4f0c242524c2c0877e9437d1d26",
+                        "exitCode": 255,
+                        "finishedAt": "2019-12-19T02:05:23Z",
+                        "reason": "Error",
+                        "startedAt": "2019-12-18T23:49:34Z"
+                    }
+                },
+                "name": "nginx",
+                "ready": true,
+                "restartCount": 1,
+                "state": {
+                    "running": {
+                        "startedAt": "2019-12-19T02:05:47Z"
+                    }
+                }
+            }
+        ],
+        "hostIP": "192.168.5.22",
+        "phase": "Running",
+        "podIP": "10.44.0.2",
+        "qosClass": "BestEffort",
+        "startTime": "2019-12-18T23:48:42Z"
+    }
+}
